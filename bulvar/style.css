@@ -1,0 +1,170 @@
+:root{
+    --header-font-size: calc(7vh - 16px);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: garamond, 'EB garamond', Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    background: black;
+}
+
+span{
+    display: inline;
+}
+
+header{
+    height: 7vh;
+    font-size: var(--header-font-size);
+    box-sizing: border-box;
+    text-align: center;
+    background-color: blue;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+header:hover{
+    animation: vibralo_hatter 0.1s linear infinite forwards;
+}
+
+.cim{
+    padding: 8px;
+    color: rgb(255, 230, 0);
+    font-variant: small-caps;
+    animation: szoveg-pulse 1s linear infinite;
+}
+
+h1{
+    font-size: var(--header-font-size);
+    margin:0;
+}
+
+@keyframes szoveg-pulse{
+    50%{
+        text-shadow: 0 0 10px rgb(130, 72, 0); color:yellow;
+    }
+}
+
+h1 > del{
+    text-decoration-color: red;
+    text-decoration-style:dashed;
+    font-size: calc(var(--header-font-size) - 1.5vh);
+}
+
+main{
+    height: 90vh;
+    overflow-y: scroll;
+    padding: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.hir{
+    width: 800px;
+    background-image: linear-gradient(to right, #aaa, #ddd);
+    border: 5px groove blue;
+    margin: 8px;
+    padding: 8px;
+    border-top-left-radius: 32px;
+}
+
+.hir:hover{
+    animation: vibralo_hatter 0.1s linear infinite forwards;
+}
+
+@keyframes vibralo_hatter {
+    0%, 100%{background: red;}
+    50%{color: red; background: blue;}
+}
+
+.hir > .cim{
+    font-size: 40px;
+}
+
+.hir > .content{
+    font-size: 25px;
+    display: flex;
+    padding: 8px;
+}
+
+.hir img{
+    width: auto;
+    display: block; 
+    object-fit: contain;
+    height: 100px;
+    padding-right: 8px;
+    border-right: 2px solid blue;
+    margin-right: 8px;
+}
+
+#aura {
+    background-image: radial-gradient(circle, blue 0%, transparent 70%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    animation: hatter_pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes hatter_pulse {
+    0%, 100% {
+        background-size: 100% 100%;
+    }
+    50% {
+        background-size: 130% 130%;
+    }
+}
+
+
+.code{
+    color: rgb(255, 224, 184);
+    padding: 4px;
+    white-space: pre;
+    font-family: 'Courier New', Courier, monospace;
+    border: 2px solid blue;
+    background-color: #888;
+    box-sizing: border-box;
+}
+
+.green{
+    color:green;
+}
+.blue{
+    color:blue;
+}
+.yellow{
+    color:yellow;
+}
+.red{
+    color:rgb(211, 0, 0);
+    font-family:'Times New Roman', Times, serif;
+}
+.brown{
+    color:brown;
+}
+.white{
+    color:white;
+}
+.good{
+    color:rgb(0, 255, 0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+footer{
+    height: 3vh;
+    box-sizing: border-box;
+    background-color: grey;
+    margin: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 100%;
+    padding: 8px;
+}
+
+footer:hover{
+    animation: vibralo_hatter 0.1s linear infinite forwards;
+}
