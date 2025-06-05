@@ -12,10 +12,10 @@ body{
     overflow: hidden;
     background: black;
     color: white;
-    cursor: url(shooting-target.svg) 50 50, crosshair;
+    cursor: url(shooting-target.svg) 25 25, crosshair;
 }
 body:active{
-    cursor: url(boom.svg) 50 50, wait;
+    cursor: url(boom.svg) 25 25, wait;
 }
 
 
