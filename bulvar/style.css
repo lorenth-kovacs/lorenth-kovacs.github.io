@@ -11,6 +11,7 @@ body{
     font-family: garamond, 'EB garamond', Arial, Helvetica, sans-serif;
     overflow: hidden;
     background: black;
+    cursor: url(shooting-target.png);
 }
 
 span{
