@@ -11,8 +11,13 @@ body{
     font-family: garamond, 'EB garamond', Arial, Helvetica, sans-serif;
     overflow: hidden;
     background: black;
-    cursor: url(shooting-target.png);
+    color: white;
+    cursor: url(shooting-target.svg) 50 50, crosshair;
 }
+body:active{
+    cursor: url(boom.svg) 50 50, wait;
+}
+
 
 span{
     display: inline;
@@ -23,7 +28,7 @@ header{
     font-size: var(--header-font-size);
     box-sizing: border-box;
     text-align: center;
-    background-color: blue;
+    background-color: #0000ff88;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
@@ -158,7 +163,7 @@ main{
 footer{
     height: 3vh;
     box-sizing: border-box;
-    background-color: grey;
+    background-color: #80808088;
     margin: 0;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;

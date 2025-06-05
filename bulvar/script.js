@@ -13,3 +13,4 @@ document.addEventListener('mousemove', (e) => {
 
   body.style.background = `radial-gradient(circle at ${percentX}% ${percentY}%, black 0%, red 3%, blue 6%, black 15%)`;
 });
+
