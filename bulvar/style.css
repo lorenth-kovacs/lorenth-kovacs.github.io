@@ -67,7 +67,7 @@ main{
 
 .hir{
     width: 800px;
-    background-image: linear-gradient(to right, #aaa, #ddd);
+    background-image: linear-gradient(to right, #aaaaaa88, #dddddd88);
     border: 5px groove blue;
     margin: 8px;
     padding: 8px;
@@ -79,8 +79,8 @@ main{
 }
 
 @keyframes vibralo_hatter {
-    0%, 100%{background: red;}
-    50%{color: red; background: blue;}
+    0%, 100%{background: #ff000088;}
+    50%{color: red; background: #0000ff88;}
 }
 
 .hir > .cim{
