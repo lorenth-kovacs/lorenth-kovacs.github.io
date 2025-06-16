@@ -12,10 +12,10 @@ body{
     overflow: hidden;
     background: black;
     color: white;
-    cursor: url(sources/shooting-target_100.svg) 50 50, url(sources/shooting-target_50.svg) 25 25, url(sources/shooting-target_32.svg) 16 16, url(sources/shooting-target_100.png) 50 50, url(sources/shooting-target_50.png) 25 25, url(sources/shooting-target_32.png) 16 16, none;
+    cursor: url(sources/cursor/shooting-target_100.svg) 50 50, url(sources/cursor/shooting-target_50.svg) 25 25, url(sources/cursor/shooting-target_32.svg) 16 16, url(sources/cursor/shooting-target_100.png) 50 50, url(sources/cursor/shooting-target_50.png) 25 25, url(sources/cursor/shooting-target_32.png) 16 16, none;
 }
 body:active{
-    cursor: url(sources/boom_100.svg) 50 50, url(sources/boom_50.svg) 25 25, url(sources/boom.jpg) 25 25, none;
+    cursor: url(sources/cursor/boom_100.svg) 50 50, url(sources/cursor/boom_50.svg) 25 25, url(sources/cursor/boom.jpg) 25 25, none;
 }
 
 
@@ -176,7 +176,7 @@ footer:hover{
 }
 
 #kurzor{
-    background: url(sources/shooting-target.svg);
+    background: url(sources/cursor/shooting-target.svg);
     position:fixed;
     top: 100%;
     height: 100px;

@@ -20,7 +20,7 @@ document.addEventListener('mousemove', (e) => {
 
 function Create_tank(){
   // következő tank:
-  setTimeout(Create_tank, Math.random() * 10000);
+  setTimeout(Create_tank, Math.random() * 5000);
   // elem létrehozása:
   let kep = document.createElement("img");
   let ido = Math.random() * 20;
@@ -30,7 +30,7 @@ function Create_tank(){
     id_hoz++;
   }
   kep.id = "tank" + id_hoz;
-  kep.src = "sources/tank.svg";
+  kep.src = "sources/tankok/tank.svg";
   let merre_nez = Math.random() < 0.5 ? 1 : -1;
   kep.style.width = (Math.random() * 200 * merre_nez) + "px";
   kep.style.bottom = (Math.random() * 75) + "%";
@@ -60,4 +60,4 @@ function Create_tank(){
   }, ido * 1000 + 100);
 }
 
-setTimeout(Create_tank, Math.random() * 10000);
+setTimeout(Create_tank, Math.random() * 2000);
