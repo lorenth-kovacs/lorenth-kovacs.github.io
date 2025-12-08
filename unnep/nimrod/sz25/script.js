@@ -31,39 +31,86 @@ const poziciok = [
 ];
 let pozicio_index = 0;
 
-function megragad(e){
-  original.x = uborka.offsetLeft;
-  original.y = uborka.offsetTop;
+function megragad(e) {
+  console.log("megragad");
+  // e.preventDefault();
 
-  uborkaX = e.clientX - uborka.offsetLeft;
-  uborkaY = e.clientY - uborka.offsetTop;
+  const point = getPoint(e);
+
+  // original.x = uborka.offsetLeft;
+  // original.y = uborka.offsetTop;
+
+  uborkaX = point.x - uborka.offsetLeft;
+  uborkaY = point.y - uborka.offsetTop;
 
   document.addEventListener('mousemove', move);
   document.addEventListener('mouseup', stop);
+
+  document.addEventListener('touchmove', move, { passive: false });
+  document.addEventListener('touchend', stop);
+  document.addEventListener('touchcancel', stop);
 }
-uborka.addEventListener('mousedown', megragad);
+
+let ignoreMouse = false;
+
+uborka.addEventListener("touchstart", e => {
+  ignoreMouse = true;          // block next mouse event
+  setTimeout(() => ignoreMouse = false, 100);  // reset after synthetic mouse fires
+  megragad(e);
+}, { passive: false });
+
+uborka.addEventListener("mousedown", e => {
+  if (ignoreMouse) return;     // skip synthetic mousedown
+  megragad(e);
+});
+
 
 function move(e) {
-  uborka.style.left = e.clientX - uborkaX + 'px';
-  uborka.style.top = e.clientY - uborkaY + 'px';
+  // e.preventDefault();
+  console.log("move");
+
+  const point = getPoint(e);
+
+  uborka.style.left = point.x - uborkaX + 'px';
+  uborka.style.top = point.y - uborkaY + 'px';
 }
 
 function stop(e) {
+  // e.preventDefault();
+  console.log("stop");
+
   document.removeEventListener('mousemove', move);
   document.removeEventListener('mouseup', stop);
+
+  document.removeEventListener('touchmove', move);
+  document.removeEventListener('touchend', stop);
+  document.removeEventListener('touchcancel', stop);
+
+  const point = getPoint(e);
 
   const rect = szeletelo.getBoundingClientRect();
 
   if (
-    e.clientX > rect.left &&
-    e.clientX < rect.right &&
-    e.clientY > rect.top &&
-    e.clientY < rect.bottom
+    point.x > rect.left &&
+    point.x < rect.right &&
+    point.y > rect.top &&
+    point.y < rect.bottom
   ) {
     make_slices();
   }
-    uborka.style.left = original.x + 'px';
-    uborka.style.top = original.y + 'px';
+
+  uborka.style.left = original.x + 'px';
+  uborka.style.top = original.y + 'px';
+}
+
+function getPoint(e) {
+  if (e.touches && e.touches.length > 0) {
+    return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+  }
+  if (e.changedTouches && e.changedTouches.length > 0) {
+    return { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY };
+  }
+  return { x: e.clientX, y: e.clientY };
 }
 
 function getCenter(el) {
@@ -111,3 +158,41 @@ function athelyez(uj_szelet, mennyi_maradt){
     if(mennyi_maradt > 0)
         make_slices(mennyi_maradt-1);
 }
+
+// touchscreen:
+function normalizeEvent(e) {
+  // active finger during touchmove / touchstart
+  if (e.touches && e.touches.length > 0) {
+    return {
+      clientX: e.touches[0].clientX,
+      clientY: e.touches[0].clientY
+    };
+  }
+
+  // last finger position during touchend
+  if (e.changedTouches && e.changedTouches.length > 0) {
+    return {
+      clientX: e.changedTouches[0].clientX,
+      clientY: e.changedTouches[0].clientY
+    };
+  }
+
+  return e; // mouse event
+}
+/*
+uborka.addEventListener('mousedown', e => megragad(e));
+uborka.addEventListener('touchstart', e => {
+  e.preventDefault();                 // stops page scroll
+  megragad(normalizeEvent(e));
+}, { passive: false });
+
+document.addEventListener('mousemove', e => move(e));
+document.addEventListener('touchmove', e => {
+  e.preventDefault();                 // stops page scroll
+  move(normalizeEvent(e));
+}, { passive: false });
+
+document.addEventListener('mouseup', e => stop(e));
+document.addEventListener('touchend', e => {
+  stop(normalizeEvent(e));
+}, { passive: false });*/
