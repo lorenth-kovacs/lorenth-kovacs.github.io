@@ -1,0 +1,66 @@
+:root{
+    --body-bg: #2288ee;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--body-bg);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+header{
+    height: 5%;
+}
+
+footer{
+    height: 3%;
+}
+
+main{
+    background-color: black;
+    border-radius: 8px;
+    height: 92%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#geptarolo{
+    height: 67%;
+    display: grid;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    grid-template-columns: 25vw 40vw;
+}
+
+#uborkatarolo{
+    position: relative;
+}
+
+#uborka{
+    height: auto;
+    width: 25vw;
+    cursor: grab;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#uborkaszeletelogeped{
+    height: auto;
+    width: 40vw;
+}
+
+.szelet{
+    position: fixed;
+    height: 50px;
+    width: auto;
+    transform: translate(-50%, -50%);
+    transition: 1s;
+}
