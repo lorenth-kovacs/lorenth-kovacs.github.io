@@ -15,6 +15,16 @@ body{
 
 header{
     height: 5%;
+    font-size: calc(5vh - 8px);
+    padding: 4px;
+    font-weight: bold;
+    animation: szoveg-vibral 3s linear infinite;
+}
+
+@keyframes szoveg-vibral {
+    70%{color: black}
+    80%{color: red}
+    90%{color:black}
 }
 
 footer{
