@@ -1,0 +1,244 @@
+:root{
+    --sebesseg: 0.1s;
+    --mario-seb: 0.1s;
+}
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+  /* background-image: url("images/winter-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; */
+  background-color: lightblue;
+  margin: 0;
+  height: 100vh;
+}
+
+header{
+    height: 20%;
+    position: fixed;
+    z-index: 20;
+}
+
+main{
+    height: 80%;
+    position: relative;
+}
+
+footer{
+    height: 20%;
+}
+
+#mikulas_tarolo{
+    height: 100%;
+    width: 100%;
+    padding: 9px;
+    position: relative;
+}
+
+#mikulas{
+    height: calc(100% - 16px);
+    transition: left var(--sebesseg) linear;
+    position: absolute;
+    left: 0px;
+}
+
+#karakter{
+    height: 20%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+#mario{
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    transform: translateX(-50%);
+    transition: left var(--mario-seb) linear, transform 0.1s ease;
+}
+
+#kiir_ablak{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: max(auto, 20vh);
+    width: max(auto, 25vw);
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 2px 2px 8px #333;
+}
+
+
+#kiir_szoveg{
+    background: linear-gradient(145deg, #ecedab, #d5aaaa);
+    color: #fff;
+
+    padding: 30px 40px;
+    border-radius: 18px;
+
+    font-size: 1;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.4;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.4),
+        inset 0 0 0 4px #fdd835;
+
+    max-width: 500px;
+}
+
+
+#kiir_gomb{
+    float: right;
+    margin-top: 20px;
+
+    padding: 12px 28px;
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    background: linear-gradient(145deg, #4caf50, #2e7d32);
+    color: white;
+
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 0 #1b5e20,
+        0 10px 20px rgba(0,0,0,0.4);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+#ajandekok{
+    height: 100%;
+}
+
+.ajandek{
+    height: 50px;
+    width: 50px;
+    transform: translate(-50%,-50%);
+    background-image: url(images/gift.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-clip: padding-box;
+    padding: 8px;
+    font-size: 34px;
+    font-weight: bold;
+    color: yellow;
+    position: absolute;
+    top: 8%;
+    text-shadow: 2px 2px black, 0 0 10px yellow;
+}
+
+#credit{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 8px;
+}
+
+#ajandek_tarolo{
+    display: flex;
+}
+
+#fireworks{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    /* display: none; */
+}
+#fireworks img{
+    width: auto;
+}
+
+@keyframes tuzijatek{
+    0%{
+        height: 0%;
+    }
+    100%{
+        height: 400%;
+    }
+}
+
+#marryxmas {
+  display: none;
+
+  position: fixed;
+  text-align: center;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 64px;
+  font-weight: bold;
+  color: gold;
+  text-shadow:
+    2px 2px 4px #900,
+    0 0 10px red,
+    0 0 20px green;
+
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px 50px;
+  border-radius: 20px;
+
+  z-index: 1000;
+  pointer-events: none; /* ne zavarja a játékot */
+}
+
+#controller{
+    display: none;
+}
+
+/* Látható gombok (csak jelzés, dizájn) */
+#kontroller-bal, #kontroller-jobb {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 60px;
+    background: rgba(255,255,255,0.2);
+    border: 2px solid #fff;
+    border-radius: 12px;
+    z-index: 1000;
+    pointer-events: none; /* nem fogja a kattintást */
+}
+
+#kontroller-bal { left: 20px; }
+#kontroller-jobb { right: 20px; }
+
+/* Láthatatlan kattintó rétegek */
+#touch-bal, #touch-jobb {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 50%; /* a képernyő fele */
+    z-index: 999;
+}
+
+#touch-bal { left: 0; }
+#touch-jobb { right: 0; }
