@@ -49,6 +49,10 @@ switch(window.location.hash){
     case "#vilmo":
         szoveg_vegen_kiirni = "Boldog Karácsonyt, Vilmo!";
         break;
+    case "#anya":
+        szoveg_vegen_kiirni = "Boldog Karácsonyt, Anya!";
+        betuk_ajandekokra = "MARRYXMAS!ANYA";
+        break;
 }
 
 //#region változók
