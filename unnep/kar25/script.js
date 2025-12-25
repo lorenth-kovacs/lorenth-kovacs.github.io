@@ -1,5 +1,5 @@
 // konstansok a játékhoz
-const betuk_ajandekokra = "MARRYXMAS!";
+let betuk_ajandekokra = "MARRYXMAS!";
 let szoveg_vegen_kiirni = "Boldog Karácsonyt!";
 
 const sebesseg = {ido: 50, pixels: 10};
@@ -10,10 +10,44 @@ switch(window.location.hash){
         szoveg_vegen_kiirni = "Boldog Karácsonyt, Maxim!";
         break;
     case "#vilmos":
-        szoveg_vegen_kiirni = "Boldog Karácsonyt, Vilmos!";
+        betuk_ajandekokra = "MARRYXMAS45"
+        szoveg_vegen_kiirni = "Boldog Karácsonyt, Vilmos45!";
         break;
     case "#zsolti":
         szoveg_vegen_kiirni = "Boldog Karácsonyt, Zsolti!";
+        break;
+    case "#berci":
+        szoveg_vegen_kiirni = "Boldog Karácsonyt, Berci!";
+        break;
+    case "#nimrod":
+        szoveg_vegen_kiirni = "Boldog Karácsonyt, Nimród!";
+        break;
+    case "#reka":
+        szoveg_vegen_kiirni = "Boldog Karácsonyt, Réka!";
+        break;
+    case "#anna":
+        szoveg_vegen_kiirni = "Boldog Karácsonyt, Anna!";
+        break;
+    case "#np":
+        szoveg_vegen_kiirni = "Boldog Karácsonyt, Nagypapa!";
+        break;
+    case "#nm":
+        szoveg_vegen_kiirni = "Boldog Karácsonyt, Nagymama!";
+        break;
+    case "#lili":
+        szoveg_vegen_kiirni = "Boldog Karácsonyt, Lili!";
+        break;
+    case "#mamageza":
+        szoveg_vegen_kiirni = "Boldog Karácsonyt, Mama és Géza!";
+        break;
+    case "#patrik":
+        szoveg_vegen_kiirni = "Boldog Karácsonyt, Patrik!";
+        break;
+    case "#lele":
+        szoveg_vegen_kiirni = "Boldog Karácsonyt, Lele!";
+        break;
+    case "#vilmo":
+        szoveg_vegen_kiirni = "Boldog Karácsonyt, Vilmo!";
         break;
 }
 
@@ -361,7 +395,7 @@ function Jatek_inditasa(){
 }
 
 async function Main(){
-    await Kiir("Vigyázz! A Télapó idén nem elég óvatos, és elejti az ajándékait! Mentsd meg a karácsonyt, és kapd el az elejtett ajándékokat! De vigyázz, mert ha egy leesik, összetörik, és elromlik a karácsony! tipp: előbb enged fel az egyik gombot, és csak akkor nyomd le a másikat.", "Mehet!");
+    await Kiir("Vigyázz! A Télapó idén nem elég óvatos, és elejti az ajándékait! Mentsd meg a karácsonyt, és kapd el az elejtett ajándékokat! De vigyázz, mert ha egy leesik, összetörik, és elromlik a karácsony! tipp: előbb enged fel az egyik gombot, és csak akkor nyomd le a másikat. (és érdemes álló helyzetben tartani a mobileszközt.)", "Mehet!");
 
     Jatek_inditasa();
 }

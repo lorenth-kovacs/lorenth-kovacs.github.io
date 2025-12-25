@@ -1,0 +1,11 @@
+Mit tud a program?
+ - x: sebesség
+ - felül megy a télapó x sebességgel random változtatva irányát (egyszer jobbra, egyszer balra) random: hol vált irányt
+ - közben random eldob ajándékokat
+ - ajándékok x sebességgel haladnak egyenesen a föld felé
+ - ajándékokon betűk, amik végül kiadnak egy szöveget
+ - alul egy karaktert -> és <- nyilakkal irányít a felhasználó
+ - karakter x sebességgel halad balra vagy jobbra
+ - nem szabad engednie leesnie az ajándékokat, alájuk kell navigálnia
+ - az összegyűjtött ajándékok a kép aljára kerülnek egymás mellé
+ - ha nem kap el egy ajándékot, összetörik, újrakezdődik.
